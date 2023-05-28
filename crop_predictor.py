@@ -2,11 +2,14 @@ import pickle
 
 import streamlit as st
 import pandas as pd
+import xgboost as xgb
+from sklearn.ensemble import RandomForestClassifier
+
 
 st.title("Realtime crop predictor")
-file = open('finalized_model.pkl', 'rb')
+file = open('randomforest_model.pkl', 'rb')
 
-loaded_model = pickle.load(open('finalized_model.pkl', 'rb'))
+loaded_model = pickle.load(open('randomforest_model.pkl', 'rb'))
 
 N = st.number_input("Nitrogen Content of soil")
 P = st.number_input("Phosphorous Content of soil")
